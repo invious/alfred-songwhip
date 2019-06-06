@@ -19,13 +19,38 @@
 				<false/>
 			</dict>
 		</array>
-		<key>4A0D8708-ADC1-4F10-847D-77870EF4848C</key>
+		<key>45CE2EF1-E412-441B-87A8-50DD96DAF53E</key>
 		<array/>
 		<key>5165977B-A4C5-4F9B-9BD8-EC00E5F87A65</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>4A0D8708-ADC1-4F10-847D-77870EF4848C</string>
+				<string>54CD109C-6CEF-424C-BBB0-6B65CA3EB8A3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>54CD109C-6CEF-424C-BBB0-6B65CA3EB8A3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D8F537C6-9A29-49F2-81DB-09808A2B04B0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>2904BBB4-608B-4129-BF90-D8BD3760B242</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>02CAE619-6175-4FAA-86A2-E1D905D02D73</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -39,6 +64,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>5165977B-A4C5-4F9B-9BD8-EC00E5F87A65</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D8F537C6-9A29-49F2-81DB-09808A2B04B0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>45CE2EF1-E412-441B-87A8-50DD96DAF53E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -82,10 +120,83 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Your music url has been copied to clipboard.</string>
+				<key>title</key>
+				<string>Copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D8F537C6-9A29-49F2-81DB-09808A2B04B0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>cb</key>
+					<string>{clipboard}</string>
+					<key>url</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>6D143823-70EB-4632-9F89-51996A7669C4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>copy</string>
+						<key>outputlabel</key>
+						<string>copy</string>
+						<key>uid</key>
+						<string>2904BBB4-608B-4129-BF90-D8BD3760B242</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>go</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>54CD109C-6CEF-424C-BBB0-6B65CA3EB8A3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -123,27 +234,24 @@ python extract.py "$CLIP"</string>
 			<key>uid</key>
 			<string>5165977B-A4C5-4F9B-9BD8-EC00E5F87A65</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>variables</key>
-				<dict>
-					<key>cb</key>
-					<string>{clipboard}</string>
-					<key>url</key>
-					<string>{query}</string>
-				</dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{var:url}</string>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>6D143823-70EB-4632-9F89-51996A7669C4</string>
+			<string>45CE2EF1-E412-441B-87A8-50DD96DAF53E</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -153,34 +261,35 @@ python extract.py "$CLIP"</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>{query}</string>
+				<string>{var:url}</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>4A0D8708-ADC1-4F10-847D-77870EF4848C</string>
+			<string>02CAE619-6175-4FAA-86A2-E1D905D02D73</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>v1.2
-* songwhip url is now the converted one
-+ provider specific icons
-+ cmd changes the subtitle to "Copy to clipboard"
-+ alt (option) shows the extracted url
+	<string>v0.2
 
-v1.1
-- search source restricted to clipboard content 
-+ workflow processes the result of songwhip.com query and generates a list
+- Upgraded for Alfred 4, now default action is to copy link, hold CMD to visit directly
 
-v1.0
+v0.1
 
-- Nothing fancy, just searches on songwhip.com using the argument or the clipboard content if no argument specified.</string>
+- Working in Alfred 3, provides choices of sites to visit</string>
 	<key>uidata</key>
 	<dict>
+		<key>02CAE619-6175-4FAA-86A2-E1D905D02D73</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>445</integer>
+		</dict>
 		<key>2C2540F4-B114-408C-AF38-1F2DA4799A87</key>
 		<dict>
 			<key>note</key>
@@ -190,30 +299,46 @@ v1.0
 			<key>ypos</key>
 			<integer>30</integer>
 		</dict>
-		<key>4A0D8708-ADC1-4F10-847D-77870EF4848C</key>
+		<key>45CE2EF1-E412-441B-87A8-50DD96DAF53E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>620</integer>
+			<integer>610</integer>
 			<key>ypos</key>
-			<integer>80</integer>
+			<integer>270</integer>
 		</dict>
 		<key>5165977B-A4C5-4F9B-9BD8-EC00E5F87A65</key>
 		<dict>
 			<key>xpos</key>
-			<integer>400</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>140</integer>
+		</dict>
+		<key>54CD109C-6CEF-424C-BBB0-6B65CA3EB8A3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>440</integer>
+			<key>ypos</key>
+			<integer>130</integer>
 		</dict>
 		<key>6D143823-70EB-4632-9F89-51996A7669C4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>260</integer>
+			<integer>215</integer>
 			<key>ypos</key>
-			<integer>60</integer>
+			<integer>75</integer>
+		</dict>
+		<key>D8F537C6-9A29-49F2-81DB-09808A2B04B0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>585</integer>
+			<key>ypos</key>
+			<integer>35</integer>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.2</string>
+	<string>0.2</string>
 	<key>webaddress</key>
 	<string>github.com/invious</string>
 </dict>

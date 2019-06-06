@@ -39,12 +39,23 @@ data = {"items":
 	{
 		"uid": "desktop",
 		"title": source,
-		"arg": link,
-		"autocomplete": "Desktop",
+        "arg": "copy",
+		"mods": {
+            "cmd": {
+                "valid": True,
+                "arg": "go",
+                "subtitle": "Visit Link"
+            }
+        },
+		"autocomplete": source,
 		"icon": {
 			"type": "fileicon",
-			"path": "~/Desktop"
-		}
+			"path": "./icons/" + source + '.png'
+		},
+         "variables": {
+            "url": source,
+        }
+
 	} for source, link in link_dict.items()
 ]
 }
