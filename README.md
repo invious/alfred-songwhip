@@ -25,11 +25,18 @@ If you are having issues, check the debugger.
 
 ### Missing Python Packages
 
-Best advice is to run `pip install --user -U pip` and then do `which python` to find your python executable.
-
 You will also need to find the workflow data folder:
 
 ![](https://i.imgur.com/ESFMLvO.png)
+
+and in it, create a new file `setup.cfg` with the following contents:
+
+```
+[install]
+prefix=
+```
+
+Run `pip install --user -U pip` and then do `which python` to find your python executable.
 
 ```
 pip install --user -U pip
