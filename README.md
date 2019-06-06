@@ -1,6 +1,10 @@
 # alfred3-songkick
 Automatically gives you links to the track on your clipboard for all music platforms provided by Songkick.
 
+## Download
+
+See [releases page](https://github.com/invious/alfred3-songkick/releases/) for latest Workflow file.
+
 ## Usage
 
 Have a music link in your clipboard,
